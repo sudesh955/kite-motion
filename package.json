@@ -1,0 +1,116 @@
+{
+	"name": "motion",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"test": "jest",
+		"lint": "eslint .",
+		"ios": "react-native run-ios",
+		"start": "react-native start",
+		"android": "react-native run-android",
+		"prettify": "prettier --write --ignore-unknown ."
+	},
+	"dependencies": {
+		"@shopify/react-native-skia": "^1.0.2",
+		"app-native": "link:app-native",
+		"react": "18.2.0",
+		"react-native": "0.73.6"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.24.0",
+		"@babel/preset-env": "^7.24.0",
+		"@babel/runtime": "^7.24.0",
+		"@react-native/babel-preset": "0.73.21",
+		"@react-native/eslint-config": "0.73.2",
+		"@react-native/metro-config": "0.73.5",
+		"@react-native/typescript-config": "0.74.1",
+		"@types/react": "^18.2.65",
+		"@types/react-native-asset": "^2.0.2",
+		"@types/react-test-renderer": "^18.0.7",
+		"babel-jest": "^29.7.0",
+		"eslint": "^8.57.0",
+		"jest": "^29.7.0",
+		"prettier": "3.2.5",
+		"react-native-asset": "^2.1.1",
+		"react-test-renderer": "18.2.0",
+		"sharp": "^0.33.2",
+		"typescript": "5.4.2"
+	},
+	"jest": {
+		"preset": "react-native"
+	},
+	"prettier": {
+		"useTabs": true,
+		"trailingComma": "all",
+		"bracketSpacing": false
+	},
+	"eslintConfig": {
+		"env": {
+			"es2021": true
+		},
+		"parserOptions": {
+			"sourceType": "module",
+			"ecmaVersion": "latest"
+		},
+		"root": true,
+		"extends": [
+			"plugin:react-hooks/recommended",
+			"plugin:react/recommended",
+			"plugin:react/jsx-runtime",
+			"prettier"
+		],
+		"plugins": [
+			"react-native"
+		],
+		"settings": {
+			"react": {
+				"version": "detect"
+			}
+		},
+		"overrides": [
+			{
+				"files": [
+					"*.ts",
+					"*.tsx"
+				],
+				"extends": [
+					"plugin:@typescript-eslint/recommended"
+				],
+				"parser": "@typescript-eslint/parser",
+				"plugins": [
+					"@typescript-eslint/eslint-plugin"
+				],
+				"rules": {
+					"@typescript-eslint/no-inferrable-types": "off"
+				}
+			},
+			{
+				"files": [
+					"*.d.ts"
+				],
+				"rules": {
+					"react-native/split-platform-components": "off"
+				}
+			},
+			{
+				"extends": [
+					"plugin:jest/recommended"
+				],
+				"files": [
+					"*.{spec,test}.{js,ts,tsx}",
+					"**/__{mocks,tests}__/**/*.{js,ts,tsx}"
+				]
+			}
+		],
+		"rules": {
+			"react-native/no-unused-styles": "error",
+			"react-native/no-inline-styles": "error",
+			"react-native/no-color-literals": "error",
+			"react-native/no-single-element-style-arrays": "error"
+		}
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"packageManager": "yarn@4.1.1"
+}

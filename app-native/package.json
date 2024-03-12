@@ -1,0 +1,15 @@
+{
+	"private": true,
+	"name": "app-native",
+	"version": "0.0.1",
+	"react-native": "index",
+	"source": "index",
+	"codegenConfig": {
+		"name": "App",
+		"type": "module",
+		"jsSrcsDir": "js",
+		"android": {
+			"javaPackageName": "com.rtn"
+		}
+	}
+}
